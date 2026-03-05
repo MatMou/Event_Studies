@@ -1,0 +1,75 @@
+# =============================================================================
+# Jupyter Book Configuration — Event Studies in Finance & Economics
+# =============================================================================
+
+title: "Event Studies in Finance & Economics"
+author: "Mathis Mourey"
+logo: ""
+
+# Book settings
+only_build_toc_files: true
+
+# Force re-execution of notebooks on each build
+execute:
+  execute_notebooks: "off"   # notebooks are pre-executed; set to "auto" if you want live execution
+  timeout: 300
+  allow_errors: false
+
+# HTML output settings
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: false
+  home_page_in_navbar: true
+  favicon: ""
+  extra_navbar: >
+    <p>
+      <a href="https://matmou.github.io/OpenModules" target="_blank">
+        OpenModules ↗
+      </a>
+    </p>
+  extra_footer: |
+    <p>
+      © 2026 Mathis Mourey — The Hague University of Applied Sciences<br/>
+      Licensed under <a href="https://opensource.org/licenses/MIT">MIT License</a>
+    </p>
+  google_analytics_id: ""
+  comments:
+    hypothesis: false
+    utterances: false
+
+# Repository settings (for edit/issue buttons)
+repository:
+  url: https://github.com/MatMou/Event_Studies
+  path_to_book: ""
+  branch: main
+
+# Launch button settings
+launch_buttons:
+  notebook_interface: "classic"
+  binderhub_url: "https://mybinder.org"
+  colab_url: "https://colab.research.google.com"
+  thebe: false
+
+# Bibliography
+bibtex_bibfiles: []
+
+# Sphinx settings
+sphinx:
+  extra_extensions:
+    - sphinx_proof
+    - sphinx_exercise
+  config:
+    html_show_sourcelink: false
+    html_theme_options:
+      show_navbar_depth: 2
+      max_navbar_depth: 3
+      show_toc_level: 2
+      repository_url: "https://github.com/MatMou/Event_Studies"
+      repository_branch: "main"
+      use_repository_button: true
+      use_issues_button: true
+      use_download_button: true
+      home_page_in_toc: true
+      logo_only: false
+      extra_navbar: ""
