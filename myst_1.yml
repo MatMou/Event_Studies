@@ -1,0 +1,55 @@
+# =============================================================================
+# MyST Configuration — Event Studies in Finance & Economics
+# =============================================================================
+
+version: 1
+
+project:
+  title: Event Studies in Finance & Economics
+  subtitle: A graduate-level course on event study methodology
+  authors:
+    - name: Mathis Mourey
+      affiliations:
+        - The Hague University of Applied Sciences
+  keywords:
+    - event studies
+    - finance
+    - econometrics
+    - abnormal returns
+    - Python
+  github: https://github.com/MatMou/Event_Studies
+  license:
+    content: MIT
+  open_access: true
+  toc:
+    - file: intro.md
+    - title: "Part I — Foundations"
+      children:
+        - file: sessions/session_01_foundations_of_event_studies.ipynb
+        - file: sessions/session_02_market_model_normal_returns.ipynb
+        - file: sessions/session_03_measuring_abnormal_returns.ipynb
+    - title: "Part II — Statistical Inference"
+      children:
+        - file: sessions/session_04_statistical_inference_parametric.ipynb
+        - file: sessions/session_05_statistical_inference_nonparametric.ipynb
+    - title: "Part III — Advanced Methods"
+      children:
+        - file: sessions/session_06_cross_sectional_analysis.ipynb
+        - file: sessions/session_07_long_horizon_event_studies.ipynb
+        - file: sessions/session_08_extensions_special_topics.ipynb
+    - title: "Part IV — Capstone"
+      children:
+        - file: sessions/session_09_design_implementation.ipynb
+        - file: sessions/session_10_capstone_case_studies.ipynb
+
+site:
+  title: Event Studies in Finance & Economics
+  nav:
+    - title: Home
+      url: /
+    - title: OpenModules
+      url: https://matmou.github.io/OpenModules
+  actions:
+    - title: GitHub
+      url: https://github.com/MatMou/Event_Studies
+  template: book-theme
