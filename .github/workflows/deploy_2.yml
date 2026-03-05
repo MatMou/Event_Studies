@@ -1,0 +1,72 @@
+name: Deploy Jupyter Book to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install jupyter-book>=1.0.0
+          pip install numpy pandas statsmodels scipy matplotlib seaborn
+          pip install yfinance pandas-datareader arch linearmodels
+
+      - name: Show repo structure (debug)
+        run: |
+          echo "=== Root files ==="
+          ls -la
+          echo "=== Sessions folder ==="
+          ls sessions/ || echo "No sessions/ folder"
+          echo "=== _config.yml ==="
+          cat _config.yml || echo "_config.yml not found"
+          echo "=== _toc.yml ==="
+          cat _toc.yml || echo "_toc.yml not found"
+
+      - name: Build the book
+        run: |
+          jupyter-book build . --all 2>&1
+          echo "=== Build exit code: $? ==="
+          ls -la _build/ || echo "_build/ was not created"
+          ls -la _build/html/ || echo "_build/html/ was not created"
+
+      - name: Upload artifact for Pages deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_build/html"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
