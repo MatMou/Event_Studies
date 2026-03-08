@@ -26,7 +26,7 @@ project:
     - title: "Part I — Foundations"
       children:
         - file: sessions/session_01_foundations.ipynb
-        - file: sessions/session_02_normal_returns_model.ipynb
+        - file: sessions/session_02_normal_return_models.ipynb
         - file: sessions/session_03_aggregation.ipynb
     - title: "Part II — Statistical Inference"
       children:
