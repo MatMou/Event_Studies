@@ -25,22 +25,16 @@ project:
     - file: intro.md
     - title: "Part I — Foundations"
       children:
-        - file: sessions/session_01_foundations_of_event_studies.ipynb
-        - file: sessions/session_02_market_model_normal_returns.ipynb
-        - file: sessions/session_03_measuring_abnormal_returns.ipynb
+        - file: sessions/session_01_foundations.ipynb
+        - file: sessions/session_02_normal_returns_model.ipynb
+        - file: sessions/session_03_aggregation.ipynb
     - title: "Part II — Statistical Inference"
       children:
-        - file: sessions/session_04_statistical_inference_parametric.ipynb
-        - file: sessions/session_05_statistical_inference_nonparametric.ipynb
+        - file: sessions/session_04_parametric_tests.ipynb
     - title: "Part III — Advanced Methods"
       children:
-        - file: sessions/session_06_cross_sectional_analysis.ipynb
-        - file: sessions/session_07_long_horizon_event_studies.ipynb
-        - file: sessions/session_08_extensions_special_topics.ipynb
     - title: "Part IV — Capstone"
       children:
-        - file: sessions/session_09_design_implementation.ipynb
-        - file: sessions/session_10_capstone_case_studies.ipynb
 
 site:
   title: Event Studies in Finance & Economics
