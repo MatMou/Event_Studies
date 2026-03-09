@@ -31,10 +31,22 @@ project:
     - title: "Part II — Statistical Inference"
       children:
         - file: sessions/session_04_parametric_tests.ipynb
+        - file: sessions/session_05_nonparametric_tests.ipynb
+        - file: sessions/session_06_cross_sectional_regression.ipynb
     - title: "Part III — Advanced Methods"
       children:
+        - file: sessions/session_07_long_horizon.ipynb
+        - file: sessions/session_08_extensions.ipynb
+        - file: sessions/session_08b_garch_event_dummies.ipynb
+        - file: sessions/session_09_implementation.ipynb
     - title: "Part IV — Capstone"
       children:
+        - file: sessions/session_10_capstonechatgpt.ipynb
+    - title: "Part V — To go further"
+      children:
+        - file: sessions/session_11_did_twfe.ipynb
+        - file: sessions/session_12_fixed_income.ipynb
+        
 
 site:
   title: Event Studies in Finance & Economics
